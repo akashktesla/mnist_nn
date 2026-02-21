@@ -1,8 +1,8 @@
-##RUN
+## RUN
 To run the app
 ```
 python app.py
 ```
+## Output
 
-##Output
 ![output](output.jpg)
