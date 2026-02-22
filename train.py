@@ -2,7 +2,7 @@ from torchvision import datasets, transforms
 from torch import nn,optim
 import torch
 from torch.utils.data import DataLoader
-from model import MLP
+from model import MLP,CNN
 
 transform = transforms.ToTensor()
 
@@ -34,6 +34,7 @@ test_loader = DataLoader(
 
 def training_loop():
     model = MLP()
+    model = CNN()
     loss_fn = nn.CrossEntropyLoss()
     optimizer = optim.Adam(params=model.parameters())
     epochs = 3
@@ -52,7 +53,7 @@ def training_loop():
             optimizer.step()
             print(f"loss: {loss}")
 
-    torch.save(model.state_dict(), "mnist_model.pth")
+    torch.save(model.state_dict(), "mnist_model_cnn.pth")
     print("Model saved!")
     return model
 
