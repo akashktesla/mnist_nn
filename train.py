@@ -82,4 +82,9 @@ def test_loop(model):
 if __name__=="__main__":
     model = training_loop()
     test_loop(model)
+    # model = CNN()
+    # model.load_state_dict(torch.load("mnist_model_cnn.pth", map_location="cpu"))
+    # for i in model.model:
+    #     print(i)
+
 
